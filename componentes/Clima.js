@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 const Clima = ({resultados}) => {
     const {name, main} = resultados
@@ -12,7 +12,7 @@ const Clima = ({resultados}) => {
                 <Text  style={styles.temperatura}>
                 &#x2103;
                 </Text>
-                <Image  style={styles.img} source={{uri: 'http://openweathermap.org/img/w/${resultado.weather[0].icon}.png'}}>
+                <Image  style={styles.img} source={{uri: `http://openweathermap.org/img/w/${resultados.weather[0].icon}.png`}}>
 
                 </Image>
             </Text>

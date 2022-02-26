@@ -20,7 +20,7 @@ const App = () => {
           const apiKey = 'c62d1b64c7ff8a5b19a105e5293c498f'
           const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${apiKey}`
           try{
-            const respuesta = await fecth(url);
+            const respuesta = await fetch(url);
             const data = await respuesta.json();
 
             if (data.cod === '404') {
@@ -31,7 +31,8 @@ const App = () => {
             guardarConsulta(false);
           }
 
-        }catch{
+        }catch(err){
+          console.log(err);
           mostrarAlerta('No hay ciudad');
         }
         }
